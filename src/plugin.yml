@@ -1,0 +1,54 @@
+name: WEdit
+main: com.nao20010128nao.WEdit_main
+version: "2.1.0"
+api: [1.0.0]
+load: STARTUP
+author: LesMi
+authors: [LesMi]
+description: The new world editor for 1.4
+website: http://localhost/
+commands:
+ /set:
+  description: set the specific block at registered coordinate.
+  usage: "/set <id> : 範囲をブロックで埋めます"
+  permission: wedit.command
+ /cut:
+  description: cut block at registered coordinate.
+  usage: "/cut : 範囲のブロックを削除します"
+  permission: wedit.command
+ /replace:
+  description: replace block at registered coordinate.
+  usage: "/replace <ID1> <ID2> : ID1をID2のブロックに置き代えます"
+  permission: wedit.command
+ /air:
+  description: replace to air block at registered coordinate.
+  usage: "/air <id> : IDのブロックのみ削除します"
+  permission: wedit.command
+ /undo:
+  description: undo
+  usage: "/undo : 前回の操作を取り消します"
+  permission: wedit.command
+ /e:
+  description: erase position data
+  usage: "/e [1|2]: 指定する場合片方を、指定しない場合POS1とPOS2の両方の範囲データを削除します。"
+  permission: wedit.command
+ /help:
+  description: show usage
+  usage: "/help or / "
+  permission: wedit.command
+ /pos:
+  description: set coordinate by command
+  usage: "/pos [1|2] <x> <y> <z> : 座標データをコマンドで設定します。"
+  permission: wedit.command
+ /:
+  description: show usage
+  usage: "/help or /"
+  permission: wedit.command
+permissions:
+ wedit:
+  default: op
+  description: "permission that allows player to use WEdit" #間違ってるぞGonbe34よ
+  children:
+   wedit.command:
+    default: op
+    description: "permission that allows player to use WEdit" #ここもじゃい
